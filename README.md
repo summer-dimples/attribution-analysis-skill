@@ -1,28 +1,68 @@
 # Attribution Analysis Skill / 指标归因分析 Skill
 
-A bilingual GitHub-ready skill for AI PM case interviews and product metric diagnosis.
+## What it does / 作用
 
-这是一个用于 **AI 产品经理 Case 面试、指标异常分析、产品复盘** 的中英文双语 Skill。
+Diagnoses metric changes with sanity checks, numerator/denominator decomposition, segmentation, causal hypotheses, and experiment plans.
 
-## Install / 安装
+处理 DAU/留存/CTR/转化/模型效果等指标波动：先排假异常，再拆子分母、分层定位、提出因果假设和验证方案。
 
-```bash
-npx skills add summer-dimples/attribution-analysis-skill
+## When to use / 何时使用
+
+- PM case interviews involving metric drops
+- AI product evaluation questions
+- A/B test interpretation
+- Model quality or conversion decline diagnosis
+
+## Inputs / 输入
+
+- Metric name and time window
+- Observed change
+- Business context
+- User segments and funnel if available
+- Experiment/release/traffic logs if available
+
+## Core workflow / 核心流程
+
+1. Check whether the anomaly is real
+2. Decompose numerator/denominator and funnel
+3. Segment by user, channel, device, geography, cohort, model version
+4. Generate ranked hypotheses
+5. Separate correlation from causality
+6. Propose data checks, experiments, and decisions
+
+## Output / 输出
+
+- Metric tree
+- Hypothesis table
+- Priority order
+- Data needed
+- Decision plan
+- Interview-ready answer
+
+## Website integration / 网站集成
+
+Powers product case drills, review critique, and metric-related mock interview questions.
+
+## Repository structure / 仓库结构
+
+```text
+attribution-analysis-skill/
+├─ README.md
+├─ SKILL.md
+├─ examples/
+│  ├─ input.zh.md
+│  ├─ output.zh.md
+│  ├─ input.en.md
+│  └─ output.en.md
+├─ eval/
+│  ├─ rubric.zh-en.md
+│  └─ test-cases.zh-en.md
+└─ references/
+   └─ field-notes.zh-en.md
 ```
 
-## Use cases / 使用场景
+## Why this skill matters / 为什么这个 skill 有价值
 
-- DAU / retention / CTR / conversion anomaly
-- AI answer satisfaction drop
-- Model evaluation metric changed
-- Recommendation quality changed
-- Growth or revenue funnel issue
-- Product case interview practice
+This skill turns a repeated interview-preparation task into a reusable capability. It is useful both as a standalone GitHub skill and as a building block inside AI Interview Copilot.
 
-## Core idea / 核心思想
-
-Do not guess causes directly. First validate the signal, decompose the metric, segment the impact, build hypotheses, verify causality, then recommend action.
-
-不要一上来猜原因。先确认是不是假异常，再拆指标、分层、建假设、做因果验证，最后给决策。
-
-See `SKILL.md` for the full bilingual specification.
+它的价值不在于“写得像 prompt”，而在于把一个高频任务抽象成可复用能力：有输入、有流程、有输出、有评估标准，也能嵌入网站 workflow。
